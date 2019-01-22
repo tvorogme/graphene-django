@@ -210,7 +210,7 @@ class GraphQLView(View):
 
         elif content_type == "application/json":
             # noinspection PyBroadException
-             :
+            try:
                 body = request.body.decode("utf-8")
             except Exception as e:
                 raise HttpError(HttpResponseBadRequest(str(e)))
